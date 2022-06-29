@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-export const Counter = () => {
+interface Props {
+    initialValue?: number
+}
 
-    const [counter, setCounter] = useState(0);
+export const Counter = ({ initialValue = 0 }: Props) => {
+
+    const [counter, setCounter] = useState(initialValue);
 
     const handleClick = () => {
-        setCounter(counter + 1);
+        setCounter(prev => prev + 1);
     }
 
   return (
