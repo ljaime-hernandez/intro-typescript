@@ -28,7 +28,7 @@ export const useCounter = ({maxCount = 1}) => {
 
         timeline.current.play(0);
 
-    }, [counter])
+    }, [counter, maxCount])
 
     return {
         counter,
