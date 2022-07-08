@@ -3,6 +3,8 @@ import { doIncreaseBy, doReset } from "./actions/actions";
 import { CounterState } from "./interfaces/interfaces";
 import { counterReducer } from "./state/counterReducer";
 
+// The INITIAL_STATE uses the CounterState interface for its definition, all the 
+// default values for it will have a zero assigned
 const INITIAL_STATE: CounterState = {
     counter: 0,
     previous: 0,
@@ -11,6 +13,9 @@ const INITIAL_STATE: CounterState = {
 
 export const CounterReducerComponent = () => {
 
+    // The useReducer will use the counterReducer defined individually, its values will be 
+    // destructured for easier use, the dispatch method will use the pre defined actions to execute
+    // value changes with the use of React.
     const [{ counter, changes, previous }, dispatch] = useReducer(counterReducer, INITIAL_STATE)
 
     const handleReset = () => {
